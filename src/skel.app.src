@@ -1,5 +1,15 @@
 {application, skel,
- [
-  {description, "A Streaming Process-based Skeleton Library for Erlang"},
-  {vsn, "0.1"}
+ [{description, "An OTP library"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
  ]}.

@@ -3,7 +3,7 @@
 all: compile
 
 clean:
-	@./rebar clean
+	@./rebar3 clean
 	@rm -f doc/skel.aux doc/skel.bbl doc/skel.blg doc/skel.fdb_latexmk doc/skel.fls
 	@rm -f doc/skel.out doc/skel.synctex.gz doc/skel.pdf doc/skel.log
 	@rm -f ./.skel.plt ./.otp.plt skel.tar.gz
@@ -12,7 +12,7 @@ clean:
 	@rm -f tutorial/bin/*.html tutorial/bin/*.png
 
 compile: src/*.erl
-	@./rebar compile
+	@./rebar3 compile
 
 console: compile
 	@exec erl -args_file ./priv/default.args
@@ -53,7 +53,7 @@ skel.tar.gz: compile
 
 docs: compile
 	@rm -f doc/*.html doc/*.css doc/edoc-info doc/erlang.png
-	@./rebar doc
+	@./rebar3 edoc
 
 doc/skel.pdf: doc/skel.tex
 	@pdflatex -interaction=batchmode -output-directory=./doc skel.tex
